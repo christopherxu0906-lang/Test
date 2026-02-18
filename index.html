@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>墨韵谜宗</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="loading" class="loading-screen active" aria-live="polite">
+      <div class="inkstone"></div>
+      <p>研墨静候，谜境将启……</p>
+    </div>
+
+    <main class="app hidden">
+      <section id="start-page" class="page active parchment">
+        <div class="mist"></div>
+        <div class="mountains"></div>
+        <div class="page-inner">
+          <h1>墨韵谜宗</h1>
+          <p class="subtitle">灯谜五解，画卷五启</p>
+          <button id="start-btn" class="ink-btn">入谜境</button>
+        </div>
+      </section>
+
+      <section id="riddle-page" class="page parchment hidden">
+        <header class="top-bar">
+          <h2>灯谜卷 · 第 <span id="current-index">1</span> 题</h2>
+          <div class="score">已解：<span id="score">0</span>/5</div>
+        </header>
+        <article class="riddle-panel">
+          <h3>谜面</h3>
+          <p id="riddle-text" class="typewriter"></p>
+          <label for="answer" class="sr-only">作答</label>
+          <input id="answer" type="text" placeholder="请落墨作答" autocomplete="off" />
+          <button id="submit-btn" class="ink-btn">盖卷作答</button>
+        </article>
+      </section>
+
+      <section id="unlock-page" class="page parchment hidden">
+        <h2>画卷已启</h2>
+        <div id="scroll" class="scroll">
+          <div class="scroll-rod top"></div>
+          <div class="scroll-content">
+            <h3 id="painting-title"></h3>
+            <p id="painting-desc"></p>
+          </div>
+          <div class="scroll-rod bottom"></div>
+        </div>
+        <button id="next-btn" class="ink-btn">继续解谜</button>
+        <button id="to-album-btn" class="seal-btn">前往收藏册</button>
+      </section>
+
+      <section id="album-page" class="page parchment hidden">
+        <header class="top-bar">
+          <h2>墨韵收藏册</h2>
+          <button id="restart-btn" class="ink-btn">重启谜卷</button>
+        </header>
+        <div id="album-grid" class="album-grid"></div>
+      </section>
+    </main>
+
+    <div id="feedback-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="feedback-title">
+      <div class="modal-content">
+        <h3 id="feedback-title"></h3>
+        <p id="feedback-text"></p>
+        <button id="modal-btn" class="seal-btn">印章收讫</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
